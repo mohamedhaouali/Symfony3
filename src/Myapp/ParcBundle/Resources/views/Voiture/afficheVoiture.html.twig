@@ -1,0 +1,30 @@
+
+<h1>Liste des voitures</h1>
+
+<table border="4">
+    <tr>
+        <td>id</td>
+        <td>serie</td>
+        <td>image</td>
+        <td>date</td>
+        <td>marque</td>
+        <td>modele</td>
+        
+        
+    </tr>    
+    
+    {% for voiture in voitures %}
+        <tr><td>{{ voiture.id }} </td>
+            <td>{{ voiture.serie }} </td>
+            <td><img src="{{ asset('images/')}}} {{voiture.nomImage}}" style="width: 50px;height: 50px"></td>
+                   
+            <td>{{ voiture.date|date('d-M-Y') }}</td>
+            <td>{{ voiture.marque }} </td>
+            <td>{{ voiture.modele.libelle }} </td>
+            
+            
+        </tr>
+        {%endfor%}
+    
+    
+</table>  

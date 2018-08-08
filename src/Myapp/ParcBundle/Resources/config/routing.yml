@@ -1,0 +1,31 @@
+parc_homepage:
+    path:     /
+    defaults: { _controller: ParcBundle:Default:index }
+
+parc_ajout:
+    path:     /Modele/ajout
+    defaults: { _controller: ParcBundle:Modele:ajout }
+    
+parc_afficher:
+    path:     /Modele/affiche
+    defaults: { _controller: ParcBundle:Modele:Affiche }  
+    
+parc_supprimer:
+    path:     /Modele/supprimer/{id}
+    defaults: { _controller: ParcBundle:Modele:Supprimer } 
+    
+parc_modifier:
+    path:     /Modele/modifier/{id}
+    defaults: { _controller: ParcBundle:Modele:Modifier }  
+    
+parc_recherche:
+    path:     /Modele/recherche
+    defaults: { _controller: ParcBundle:Modele:recherche }   
+    
+parc_ajout_voiture:
+    path:     /Voiture/ajout
+    defaults: { _controller: ParcBundle:Voiture:ajoutVoiture }  
+    
+parc_afficher_voiture:
+    path:     /Voiture/affiche
+    defaults: { _controller: ParcBundle:Voiture:Affiche }      

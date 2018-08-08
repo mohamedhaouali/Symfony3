@@ -1,0 +1,105 @@
+{% extends "ParcBundle:Default:index.html.twig" %}
+   {% block container %} 
+       
+<h1>Liste des modeles</h1>
+
+<table border="4">
+    <tr>
+        <td>id</td>
+        <td>pays</td>
+        <td>date</td>
+        <td>libelle</td>
+        <td>Modifier</td>
+        <td>Supprimer</td>
+        
+        
+    </tr>    
+    
+    {% for modele in modeles %}
+        <tr>
+            <td>{{ modele.id }} </td>
+            <td>{{ modele.pays }}</td>
+            <td>{{ modele.date|date('d-M-Y') }}</td>
+            <td>{{ modele.libelle }}</td>
+            <td> <a href="{{ path("parc_supprimer",{'id':modele.id})  }}" >Delete</a></td>
+            <td> <a href="{{ path("parc_modifier",{'id':modele.id})  }}" >Modifier</a></td>
+        </tr>
+        {%endfor%}
+    
+    
+</table>    
+  !!!!!
+  <table id="simple-table" class="table  table-bordered table-hover">
+	<thead>
+<tr>
+													
+													
+<th>Id</th>
+<th>pays</th>
+<th>date</th>
+<th>libelle</th>
+<th>Modifier</th>
+<th>Supprimer</th>
+        
+													
+													
+</tr>
+</thead>
+
+<tbody>
+												
+													
+
+													
+  {% for modele in modeles %}
+  <tr>
+													
+<td> {{ modele.id }}</td>												
+<td>{{ modele.pays }}</td>
+<td>{{ modele.date|date('d-M-Y') }}</td>
+<td> {{ modele.libelle }} </td>
+<td> <a href="{{ path("parc_modifier",{'id':modele.id})  }}"class="btn btn-xs btn-info">
+<i class="ace-icon fa fa-pencil bigger-120"></i> </a></td>
+<td> <a href="{{ path("parc_supprimer",{'id':modele.id})  }}" class="btn btn-xs btn-danger">
+<i class="ace-icon fa fa-trash-o bigger-120"></i></a></td>
+                                                                                                       
+                                                                                                        
+  {%endfor%}
+                                                                                                         
+ </tr>
+											
+
+<td>
+<div class="hidden-sm hidden-xs btn-group">
+<button class="btn btn-xs btn-success">
+<i class="ace-icon fa fa-check bigger-120"></i>
+</button>
+
+<button class="btn btn-xs btn-info">
+<i class="ace-icon fa fa-pencil bigger-120"></i>
+</button>
+
+<button class="btn btn-xs btn-danger">
+<i class="ace-icon fa fa-trash-o bigger-120"></i>
+</button>
+
+<button class="btn btn-xs btn-warning">
+<i class="ace-icon fa fa-flag bigger-120"></i>
+</button>
+</div>
+
+														
+</td>
+
+												
+
+<tr>
+													
+
+												
+
+</tbody>
+</table>
+  
+  
+{% endblock %}        

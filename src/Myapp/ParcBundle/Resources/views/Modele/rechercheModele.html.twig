@@ -1,0 +1,40 @@
+ <h1>rechercher<h1>
+
+        <form method="POST">
+         
+            pays <input type="text" name="pays">
+            
+            <input type="submit" name="sumbit" value="recherche">
+            
+            
+            
+        </form> 
+
+
+
+<h1>Liste des modeles</h1>
+
+<table border="4">
+    <tr>
+        <td>id</td>
+        <td>pays</td>
+        <td>date</td>
+        <td>libelle</td>
+        <td>Supprimer</td>
+        <td>Modifier</td>
+        
+        
+    </tr>    
+    
+    {% for modele in modeles %}
+        <tr><td>{{ modele.id }} </td>
+            <td>{{ modele.pays }}</td>
+            <td>{{ modele.date|date('d-M-Y') }}</td>
+            <td>{{ modele.libelle }}</td>
+            <td> <a href="{{ path("parc_supprimer",{'id':modele.id})  }}" >Delete</a></td>
+            <td> <a href="{{ path("parc_modifier",{'id':modele.id})  }}" >Modifier</a></td>
+        </tr>
+        {%endfor%}
+    
+    
+</table>                
